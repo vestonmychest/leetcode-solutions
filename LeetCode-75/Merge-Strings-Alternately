@@ -1,0 +1,26 @@
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        w1 = list(word1)
+        w2 = list(word2)
+
+        merged = []
+        i = 0
+        j = 0
+
+        while i < len(w1) or j < len(w2):
+            if i < len(w1):
+                merged.append(w1[i])
+                i += 1
+            if j < len(w2):
+                merged.append(w2[j])
+                j += 1
+
+        merged_string = ''.join(merged)
+        return merged_string
+
+
+solution = Solution()
+result = solution.mergeAlternately('abc', 'defgh')
+print(result)
+
+
