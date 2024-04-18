@@ -1,0 +1,18 @@
+class Solution:
+    def gcdOfStrings(self, str1, str2):
+        def gcd(a, b):
+            if a == 0:
+                return b
+            return gcd(b % a, a)
+
+        
+        if str1 + str2 != str2 + str1:
+            return ""
+        
+        length1, length2 = len(str1), len(str2)
+        if length1 > length2:
+            length = gcd(length2, length1)
+        else:
+            length = gcd(length1, length2)
+
+        return str1[:length]
