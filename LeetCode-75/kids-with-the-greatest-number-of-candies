@@ -1,0 +1,23 @@
+class Solution(object):
+    def kidsWithCandies(self, candies, extraCandies):
+        """
+        :type candies: List[int]
+        :type extraCandies: int
+        :rtype: List[bool]
+        """
+        bool_list = []
+
+        for x in candies:
+            x = x + extraCandies
+            max_num = max(candies)
+            if x < max_num:
+                x = False
+            else:
+                x = True
+            bool_list.append(bool(x))
+
+        return bool_list
+
+solution = Solution()
+results = solution.kidsWithCandies([4, 2, 1, 1, 2], 1)
+print(results)
