@@ -1,0 +1,23 @@
+class Solution(object):
+    def maxOperations(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        result = 0
+        nums.sort()
+        left = 0
+        right = len(nums) -1
+        while left < right:
+            carry = nums[right] + nums[left]
+            if carry > k:
+                right -= 1
+            elif carry < k:
+                left += 1
+            else:
+                left += 1
+                right -= 1
+                result += 1
+
+        return result
