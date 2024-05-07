@@ -1,0 +1,26 @@
+class Solution(object):
+    def maxArea(self, altura):
+        puntero1 = 0
+        puntero2 = len(altura) - 1
+        area_maxima = 0
+ 
+        # Paso #2
+        while puntero1 != puntero2:
+            # Paso #3
+            anchura = puntero2 - puntero1
+ 
+            # Paso #4
+            area_actual = anchura * min(altura[puntero1], altura[puntero2])
+ 
+            # Paso #5
+            if area_actual > area_maxima:
+                area_maxima = area_actual
+ 
+            # Paso #6
+            if altura[puntero1] <= altura[puntero2]:
+                puntero1 += 1
+            else:
+                puntero2 -= 1
+ 
+        # Paso #7
+        return area_maxima
